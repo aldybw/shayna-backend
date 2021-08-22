@@ -15,8 +15,8 @@ class Product extends Model
 
     protected $hidden = [];
 
-    // public function galleries()
-    // {
-    //     return $this->hasMany(ProductGallery::class, 'products_id');
-    // }
+    public function productGalleries()
+    {
+        return $this->hasMany(ProductGallery::class, 'products_id');
+    }
 }
