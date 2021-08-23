@@ -8,7 +8,7 @@
           <div class="card-body">
             <h4 class="box-title">Daftar Transaksi Masuk</h4>
           </div>
-          <div class="card-body">
+          <div class="card-body--">
             <div class="table-stats order-table ov-h">
               <table class="table">
                 <thead>
@@ -27,7 +27,7 @@
                     <tr>
                       <td>{{ $item->id }}</td>
                       <td>{{ $item->name }}</td>
-                      <td>{{ $item->email }}</td>
+                      <td class="text-lowercase">{{ $item->email }}</td>
                       <td>{{ $item->number }}</td>
                       <td>${{ $item->transaction_total }}</td>
                       <td>
@@ -45,12 +45,12 @@
                       </td>
                       <td>
                         @if ($item->transaction_status == 'PENDING')
-                          {{-- <a href="{{ route('transaction.status', $item->id) }}?status=SUCCESS" class="btn btn-success btn-sm">
+                          <a href="{{ route('transactions.status', $item->id) }}?status=SUCCESS" class="btn btn-success btn-sm">
                             <i class="fa fa-check"></i>
                           </a>                            
-                          <a href="{{ route('transaction.status', $item->id) }}?status=FAILED" class="btn btn-warning btn-sm">
+                          <a href="{{ route('transactions.status', $item->id) }}?status=FAILED" class="btn btn-warning btn-sm">
                             <i class="fa fa-times"></i>
-                          </a> --}}
+                          </a>
                         @endif
                         <a 
                           href="#mymodal"
